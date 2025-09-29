@@ -192,6 +192,17 @@ const setPlayButtonAccessibleText = () => {
   playButton.setAttribute("aria-label", song?.title ? `Play ${song.title}` : "Play");
 };
 
+const shuffle = () => {
+  userData?.songs.sort(() => Math.random() - 0.5);
+  userData.currentSong = null;
+  userData.songCurrentTime = 0;
+
+  renderSongs(userData?.songs);
+  pauseSong();
+  setPlayerDisplay();
+  setPlayButtonAccessibleText();
+}
+
 renderSongs(sortSongs());
 
 playButton.addEventListener("click", () => {
