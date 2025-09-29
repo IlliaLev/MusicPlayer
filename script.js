@@ -165,3 +165,4 @@ playButton.addEventListener("click", () => {
 
 pauseButton.addEventListener("click", pauseButton);
 
+nextButton.addEventListener("click", playNextSong);
