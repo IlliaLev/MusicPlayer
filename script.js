@@ -143,6 +143,16 @@ const getCurrentSongIndex = () => {
   return userData?.songs.indexOf(userData?.currentSong);
 }
 
+const playNextSong = () => {
+  if(userData?.currentSong === null){
+    playSong(userData?.songs[0].id);
+  } else {
+    const currentSongIndex = getCurrentSongIndex();
+    const nextSong = userData?.songs[currentSongIndex + 1];
+    playSong(nextSong.id);
+  }
+}
+
 renderSongs(sortSongs());
 
 playButton.addEventListener("click", () => {
@@ -154,3 +164,4 @@ playButton.addEventListener("click", () => {
 });
 
 pauseButton.addEventListener("click", pauseButton);
+
