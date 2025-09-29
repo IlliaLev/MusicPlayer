@@ -163,6 +163,6 @@ playButton.addEventListener("click", () => {
   }
 });
 
-pauseButton.addEventListener("click", pauseButton);
+pauseButton.addEventListener("click", pauseSong);
 
 nextButton.addEventListener("click", playNextSong);
